@@ -9,19 +9,20 @@ public class FeatureToggleService : IFeatureToggleService
         _featureToggles = new Dictionary<string, bool>();
     }
 
-    public bool IsEnabled(string featureName)
+    public Task<bool> IsEnabled(string featureName)
     {
-        return _featureToggles.ContainsKey(featureName) && _featureToggles[featureName];
+        return Task.FromResult(_featureToggles.ContainsKey(featureName) && _featureToggles[featureName]);
     }
 
-    public bool IsDisabled(string featureName)
+    public Task<bool> IsDisabled(string featureName)
     {
-        return !_featureToggles.ContainsKey(featureName) || !_featureToggles[featureName];
+        return Task.FromResult(!_featureToggles.ContainsKey(featureName) || !_featureToggles[featureName]);
     }
     
-    private Task LoadFeatureToggles()
+    public Task LoadFeatureToggles()
     {
         // Load feature toggles from configuration
+        return Task.CompletedTask;
     }
 }
 
