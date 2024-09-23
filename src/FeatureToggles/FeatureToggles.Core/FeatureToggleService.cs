@@ -1,4 +1,4 @@
-﻿namespace FeatureToggles;
+﻿namespace FeatureToggles.Core;
 
 public class FeatureToggleService : IFeatureToggleService
 {
@@ -6,10 +6,8 @@ public class FeatureToggleService : IFeatureToggleService
 
     public FeatureToggleService()
     {
-        _featureToggles = featureToggles;
+        _featureToggles = new Dictionary<string, bool>();
     }
-    
-    Get
 
     public bool IsEnabled(string featureName)
     {
@@ -19,6 +17,11 @@ public class FeatureToggleService : IFeatureToggleService
     public bool IsDisabled(string featureName)
     {
         return !_featureToggles.ContainsKey(featureName) || !_featureToggles[featureName];
+    }
+    
+    private Task LoadFeatureToggles()
+    {
+        // Load feature toggles from configuration
     }
 }
 
