@@ -16,13 +16,10 @@ public class InMemoryFeatureToggleService() : FeatureToggleServiceBase(new Memor
         throw new NotImplementedException();
     }
 
-    public override Task LoadFeatureToggles()
-    {
-        throw new NotImplementedException();
-    }
-
     public override Task<FeatureToggle[]> GetFeatureFlagsAsync()
     {
         throw new NotImplementedException();
     }
+    
+    
 }

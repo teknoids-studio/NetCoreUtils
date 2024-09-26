@@ -16,11 +16,6 @@ public class AzureBlobStorageFeatureToggleService() : FeatureToggleServiceBase(n
         throw new NotImplementedException();
     }
 
-    public override Task LoadFeatureToggles()
-    {
-        throw new NotImplementedException();
-    }
-
     public override Task<FeatureToggle[]> GetFeatureFlagsAsync()
     {
         throw new NotImplementedException();

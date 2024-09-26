@@ -11,8 +11,5 @@ public abstract class FeatureToggleServiceBase(IMemoryCache cache) : IFeatureTog
 
     public abstract Task<bool> IsDisabled(string featureName);
 
-    public abstract Task LoadFeatureToggles();
-
     public abstract Task<FeatureToggle[]> GetFeatureFlagsAsync();
-
 }

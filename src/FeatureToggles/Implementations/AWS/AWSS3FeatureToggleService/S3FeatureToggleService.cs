@@ -16,11 +16,6 @@ public class S3FeatureToggleService() : FeatureToggleServiceBase(new MemoryCache
         throw new NotImplementedException();
     }
 
-    public override Task LoadFeatureToggles()
-    {
-        throw new NotImplementedException();
-    }
-
     public override Task<FeatureToggle[]> GetFeatureFlagsAsync()
     {
         throw new NotImplementedException();
