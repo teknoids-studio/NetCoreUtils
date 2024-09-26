@@ -1,4 +1,6 @@
-﻿namespace FeatureToggles.Core;
+﻿using FeatureToggles.Core.Models;
+
+namespace FeatureToggles.Core;
 
 public interface IFeatureToggleService
 {
@@ -6,4 +8,6 @@ public interface IFeatureToggleService
     Task<bool> IsDisabled(string featureName);
     
     Task LoadFeatureToggles();
+    
+    Task<FeatureToggle[]> GetFeatureFlagsAsync();
 }
